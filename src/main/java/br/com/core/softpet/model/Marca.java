@@ -10,15 +10,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "marca")
-@NamedQueries({@NamedQuery(name = "Marca.findAll", query = "SELECT m FROM Marca m ORDER BY m.id"),
-                @NamedQuery(name = "Marca.findById", query = "SELECT m FROM Marca m WHERE m.id = :id"),
-                @NamedQuery(name = "Marca.findByDescricao", query = "SELECT m FROM Marca m WHERE m.descricao LIKE :descricao")})
+@NamedQueries({
+    @NamedQuery(name = "Marca.findAll", query = "SELECT m FROM Marca m ORDER BY m.id"),
+    @NamedQuery(name = "Marca.findById", query = "SELECT m FROM Marca m WHERE m.id = :id"),
+    @NamedQuery(name = "Marca.findByDescricao", query = "SELECT m FROM Marca m WHERE m.descricao LIKE :descricao")})
 public class Marca {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    
+
     private String descricao;
 
     public Marca() {
@@ -44,7 +45,7 @@ public class Marca {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
+
     @Override
     public String toString() {
         return descricao;

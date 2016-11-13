@@ -25,18 +25,18 @@ public class CompraItem {
 
     @OneToOne
     private Produto produto;
-    
+
     @ManyToOne
     private Compra compra;
-    
+
     private Double quantidade;
-    
+
     private Double valorUnitario;
-    
+
     private Double percentualDesconto;
-    
+
     private Double valorDesconto;
-    
+
     private Double valorTotal;
 
     public Integer getId() {
@@ -103,5 +103,4 @@ public class CompraItem {
         this.valorTotal = valorTotal;
     }
 
-   
 }

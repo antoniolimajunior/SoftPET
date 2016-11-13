@@ -24,10 +24,10 @@ public class Animal {
 
     @OneToOne
     private Cliente cliente;
-            
+
     @OneToOne
     private Raca raca;
-            
+
     private String nome;
 
     private Boolean sexo;
@@ -67,7 +67,7 @@ public class Animal {
     public void setRaca(Raca raca) {
         this.raca = raca;
     }
-    
+
     public Integer getId() {
         return id;
     }

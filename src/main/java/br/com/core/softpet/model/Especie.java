@@ -10,15 +10,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "especie")
-@NamedQueries({@NamedQuery(name = "Especie.findAll", query = "SELECT e FROM Especie e ORDER BY e.id"),
-                @NamedQuery(name = "Especie.findById", query = "SELECT e FROM Especie e WHERE e.id = :id"),
-                @NamedQuery(name = "Especie.findByDescricao", query = "SELECT e FROM Especie e WHERE e.descricao LIKE :descricao")})
+@NamedQueries({
+    @NamedQuery(name = "Especie.findAll", query = "SELECT e FROM Especie e ORDER BY e.id"),
+    @NamedQuery(name = "Especie.findById", query = "SELECT e FROM Especie e WHERE e.id = :id"),
+    @NamedQuery(name = "Especie.findByDescricao", query = "SELECT e FROM Especie e WHERE e.descricao LIKE :descricao")})
 public class Especie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    
+
     private String descricao;
 
     public Especie() {
@@ -44,7 +45,7 @@ public class Especie {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
+
     @Override
     public String toString() {
         return descricao;

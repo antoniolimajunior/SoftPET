@@ -4,11 +4,13 @@ import br.com.core.softpet.controller.IController;
 import br.com.core.softpet.controller.VendaItemController;
 import br.com.core.softpet.util.enums.EnumTipoPesquisa;
 import br.com.core.softpet.model.VendaItem;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class ModeloTabelaVendaItem extends ModeloTabelaPadrao<VendaItem> {
 
     IController<VendaItem> controle = new VendaItemController<VendaItem>();
-    String[] colunasLocal = {"VendaItem", "Produto"};
+    String[] colunasLocal = {"VendaItem", "Produto", "Valor Total"};
 
     public ModeloTabelaVendaItem(EnumTipoPesquisa tipoPesquisa, String numero) {
         this.colunas = colunasLocal;
@@ -29,6 +31,10 @@ public class ModeloTabelaVendaItem extends ModeloTabelaPadrao<VendaItem> {
             return vendaItem.getId();
         } else if (columnIndex == 1) {
             return vendaItem.getProduto().getDescricao();
+        } else if (columnIndex == 2) {
+            DecimalFormat df = new DecimalFormat("0.00");
+            String dx = df.format(vendaItem.getValorTotal());
+            return dx;
         } else {
             return null;
         }

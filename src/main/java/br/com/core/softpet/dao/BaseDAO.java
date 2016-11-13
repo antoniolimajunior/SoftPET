@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 
 public abstract class BaseDAO<T> implements IBaseDAO<T> {
 
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("SOFTPETPU");
+    public EntityManagerFactory emf = Persistence.createEntityManagerFactory("SOFTPETPU");
 
     public void persist(T entidade) {
         EntityManager em = emf.createEntityManager();

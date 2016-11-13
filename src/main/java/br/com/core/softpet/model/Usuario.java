@@ -10,42 +10,45 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "usuario")
-@NamedQueries({@NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u ORDER BY u.id"),
-                @NamedQuery(name = "Usuario.findById", query = "SELECT u FROM Usuario u WHERE u.id = :id"),
-                @NamedQuery(name = "Usuario.findByNome", query = "SELECT u FROM Usuario u WHERE u.nome LIKE :nome"),
-                @NamedQuery(name = "Usuario.findByNomeSenha", query = "SELECT u FROM Usuario u WHERE u.nome = :nome AND u.senha = :senha ")})
+@NamedQueries({
+    @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u ORDER BY u.id"),
+    @NamedQuery(name = "Usuario.findById", query = "SELECT u FROM Usuario u WHERE u.id = :id"),
+    @NamedQuery(name = "Usuario.findByNome", query = "SELECT u FROM Usuario u WHERE u.nome LIKE :nome"),
+    @NamedQuery(name = "Usuario.findByUsuarioSenha", query = "SELECT u FROM Usuario u WHERE u.usuario = :usuario AND u.senha = :senha ")})
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    
+
     private String nome;
     
+    private String usuario;
+
     private String senha;
-    
+
     private String cpf;
-    
+
     private String endereco;
-    
+
     private String bairro;
-    
+
     private String cidade;
-    
+
     private String complemento;
-    
+
     private String cep;
-    
+
     private String telefone;
 
     private String email;
-    
+
     private String observacao;
-    
+
     private Boolean eAdmin;
-    
+
     private Boolean eVeterinario;
-    
+
     public Usuario() {
     }
 
@@ -64,6 +67,14 @@ public class Usuario {
         this.eVeterinario = eVeterinario;
     }
 
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    
     public String getSenha() {
         return senha;
     }
@@ -175,9 +186,9 @@ public class Usuario {
     public void seteVeterinario(Boolean eVeterinario) {
         this.eVeterinario = eVeterinario;
     }
-    
+
     @Override
     public String toString() {
         return nome;
-    }    
+    }
 }

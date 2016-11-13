@@ -10,37 +10,38 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "fornecedor")
-@NamedQueries({@NamedQuery(name = "Fornecedor.findAll", query = "SELECT f FROM Fornecedor f ORDER BY f.id"),
-                @NamedQuery(name = "Fornecedor.findById", query = "SELECT f FROM Fornecedor f WHERE f.id = :id"),
-                @NamedQuery(name = "Fornecedor.findByNome", query = "SELECT f FROM Fornecedor f WHERE f.nome LIKE :nome")})
+@NamedQueries({
+    @NamedQuery(name = "Fornecedor.findAll", query = "SELECT f FROM Fornecedor f ORDER BY f.id"),
+    @NamedQuery(name = "Fornecedor.findById", query = "SELECT f FROM Fornecedor f WHERE f.id = :id"),
+    @NamedQuery(name = "Fornecedor.findByNome", query = "SELECT f FROM Fornecedor f WHERE f.nome LIKE :nome")})
 public class Fornecedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    
+
     private String nome;
-    
+
     private String nomeFantasia;
-    
+
     private String cnpj;
-    
+
     private String endereco;
-    
+
     private String bairro;
-    
+
     private String cidade;
-    
+
     private String complemento;
-    
+
     private String cep;
-    
+
     private String telefone;
 
     private String email;
-    
+
     private String observacao;
-    
+
     public Fornecedor() {
     }
 
@@ -157,5 +158,5 @@ public class Fornecedor {
     @Override
     public String toString() {
         return nome;
-    }    
+    }
 }

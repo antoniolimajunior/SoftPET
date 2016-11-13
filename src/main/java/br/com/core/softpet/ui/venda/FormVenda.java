@@ -580,6 +580,6 @@ public class FormVenda extends javax.swing.JInternalFrame implements IFormulario
                 break;
         }
         this.tblDados.setModel(modeloTabela);
-        ModeloColuna.setarColunas(tblDados, 100, 250);
+        ModeloColuna.setarColunas(tblDados, 100, 250, 200);
     }
 }

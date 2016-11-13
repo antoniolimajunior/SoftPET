@@ -1,6 +1,5 @@
 package br.com.core.softpet.model;
 
-import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,18 +25,18 @@ public class AtendimentoItem {
 
     @OneToOne
     private Produto produto;
-    
+
     @ManyToOne
     private Atendimento atendimento;
-    
+
     private Double quantidade;
-    
+
     private Double valorUnitario;
-    
+
     private Double percentualDesconto;
-    
+
     private Double valorDesconto;
-    
+
     private Double valorTotal;
 
     public Integer getId() {
@@ -102,5 +101,5 @@ public class AtendimentoItem {
 
     public void setValorTotal(Double valorTotal) {
         this.valorTotal = valorTotal;
-    }    
+    }
 }

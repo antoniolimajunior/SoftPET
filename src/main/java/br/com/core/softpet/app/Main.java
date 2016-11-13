@@ -7,6 +7,7 @@ import br.com.core.softpet.ui.cliente.FormListaCliente;
 import br.com.core.softpet.ui.compra.FormListaCompra;
 import br.com.core.softpet.ui.especie.FormListaEspecie;
 import br.com.core.softpet.ui.fornecedor.FormListaFornecedor;
+import br.com.core.softpet.ui.info.FormSobre;
 import br.com.core.softpet.ui.login.Login;
 import br.com.core.softpet.ui.marca.FormListaMarca;
 import br.com.core.softpet.ui.produto.FormListaProduto;
@@ -77,6 +78,7 @@ public class Main extends javax.swing.JFrame {
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
+        jMenuItem14 = new javax.swing.JMenuItem();
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -368,6 +370,20 @@ public class Main extends javax.swing.JFrame {
         jMenuBar1.add(jMenu5);
 
         jMenu7.setText("Sobre");
+        jMenu7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu7ActionPerformed(evt);
+            }
+        });
+
+        jMenuItem14.setText("Informações");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem14);
+
         jMenuBar1.add(jMenu7);
 
         setJMenuBar(jMenuBar1);
@@ -397,6 +413,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaProduto);
             formListaProduto.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -407,6 +424,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaCompra);
             formListaCompra.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -417,6 +435,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaAtendimento);
             formListaAtendimento.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
@@ -427,6 +446,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaUsuario);
             formListaUsuario.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jButtonUsuarioActionPerformed
 
@@ -437,6 +457,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaCliente);
             formListaCliente.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jButtonClienteActionPerformed
 
@@ -447,6 +468,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaFornecedor);
             formListaFornecedor.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jButtonFornecedorActionPerformed
 
@@ -457,6 +479,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaAnimal);
             formListaAnimal.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jButtonAnimaisActionPerformed
 
@@ -467,6 +490,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaUsuario);
             formListaUsuario.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -477,6 +501,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaCliente);
             formListaCliente.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
@@ -487,6 +512,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaFornecedor);
             formListaFornecedor.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
@@ -497,6 +523,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaAnimal);
             formListaAnimal.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
@@ -507,6 +534,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaRaca);
             formListaRaca.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
@@ -517,6 +545,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaEspecie);
             formListaEspecie.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
@@ -527,6 +556,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaProduto);
             formListaProduto.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
@@ -537,6 +567,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaMarca);
             formListaMarca.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
@@ -547,6 +578,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaCategoria);
             formListaCategoria.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
@@ -557,6 +589,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaCompra);
             formListaCompra.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
@@ -567,6 +600,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaAtendimento);
             formListaAtendimento.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -577,6 +611,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaVenda);
             formListaVenda.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
@@ -587,6 +622,7 @@ public class Main extends javax.swing.JFrame {
             jDesktopPane1.add(formListaVenda);
             formListaVenda.setSelected(true);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -597,6 +633,21 @@ public class Main extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jMenu7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu7ActionPerformed
+
+    }//GEN-LAST:event_jMenu7ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        try {
+            FormSobre formSobre = new FormSobre();
+            formSobre.setVisible(true);
+            jDesktopPane1.add(formSobre);
+            formSobre.setSelected(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     public static void main(String args[]) {
 
@@ -611,10 +662,8 @@ public class Main extends javax.swing.JFrame {
             public void run() {
                 Login login = new Login(null, true);
                 login.setVisible(true);
-                if (login.isSucceeded()) {
-                    JOptionPane.showMessageDialog(null, "Olá, AntonioJr!");
-                    new Main().setVisible(true);
-                }
+
+                new Main().setVisible(true);
             }
         });
     }
@@ -643,6 +692,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

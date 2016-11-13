@@ -1,18 +1,24 @@
 package br.com.core.softpet.ui.login;
 
+import br.com.core.softpet.controller.UsuarioController;
+import br.com.core.softpet.model.Usuario;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 public class Login extends JDialog {
-
+    
+    private Usuario usuarioLogado;
+    private UsuarioController usuarioController = new UsuarioController();
+    
     public Login(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setResizable(false);
         setLocationRelativeTo(parent);
     }
-    
-    public boolean isSucceeded() {
-        return true;
+        
+    public Usuario getUsuarioLogado() {
+        return this.usuarioLogado;
     }
      
     @SuppressWarnings("unchecked")
@@ -22,8 +28,8 @@ public class Login extends JDialog {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
+        txtSenha = new javax.swing.JPasswordField();
+        txtUsuario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
@@ -53,8 +59,8 @@ public class Login extends JDialog {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUsuario)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -65,11 +71,11 @@ public class Login extends JDialog {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(7, 7, 7)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(jLabel2)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -117,11 +123,17 @@ public class Login extends JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        dispose();
+        System.exit(0);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        isSucceeded();
+        this.usuarioLogado = (Usuario) usuarioController.procurarPorLogin("Usuario.findByUsuarioSenha", txtUsuario.getText(), new String(txtSenha.getPassword()));
+        if (this.usuarioLogado == null ? true : false) {
+            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos. Tente novamente.", "Erro", JOptionPane.ERROR_MESSAGE);
+        } else {            
+            JOptionPane.showMessageDialog(null, "Olá, " + this.usuarioLogado.getNome());
+            dispose();
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -131,7 +143,7 @@ public class Login extends JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField txtSenha;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

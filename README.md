@@ -1,2 +1,2 @@
 # SoftPET
-Trabalho do semenstre para a disciplina de Laboratório de Programação 2 - Faculdade de Tecnologia SENAC/RS
+Trabalho do semestre para a disciplina de Laboratório de Programação II - Faculdade de Tecnologia SENAC/RS (2016/2)

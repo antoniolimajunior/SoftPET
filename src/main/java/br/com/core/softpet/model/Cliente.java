@@ -10,31 +10,32 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "cliente")
-@NamedQueries({@NamedQuery(name = "Cliente.findAll", query = "SELECT c FROM Cliente c ORDER BY c.id"),
-                @NamedQuery(name = "Cliente.findById", query = "SELECT c FROM Cliente c WHERE c.id = :id"),
-                @NamedQuery(name = "Cliente.findByNome", query = "SELECT c FROM Cliente c WHERE c.nome LIKE :nome")})
+@NamedQueries({
+    @NamedQuery(name = "Cliente.findAll", query = "SELECT c FROM Cliente c ORDER BY c.id"),
+    @NamedQuery(name = "Cliente.findById", query = "SELECT c FROM Cliente c WHERE c.id = :id"),
+    @NamedQuery(name = "Cliente.findByNome", query = "SELECT c FROM Cliente c WHERE c.nome LIKE :nome")})
 public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    
+
     private String nome;
-    
+
     private String endereco;
-    
+
     private String bairro;
-    
+
     private String cidade;
-    
+
     private String complemento;
-    
+
     private String cep;
-    
+
     private String telefone;
-    
+
     private String observacao;
-    
+
     public Cliente() {
     }
 
@@ -124,5 +125,5 @@ public class Cliente {
     @Override
     public String toString() {
         return nome;
-    }    
+    }
 }

@@ -31,7 +31,7 @@ public class Venda {
 
     @OneToOne
     private Animal animal;
-    
+
     @OneToOne
     private Usuario usuario;
 
@@ -39,19 +39,19 @@ public class Venda {
     private List<VendaItem> vendaItem = new ArrayList<>();
 
     private String numero;
-    
+
     private Date dataVenda;
-    
+
     private Boolean situacao;
-    
+
     private String tipoPagamento;
-    
+
     private String observacao;
-    
+
     private Double valorTotalDesconto;
-    
+
     private Double valorTotalFrete;
-    
+
     private Double valorTotal;
 
     public Integer getId() {
@@ -156,5 +156,5 @@ public class Venda {
 
     public void setValorTotal(Double valorTotal) {
         this.valorTotal = valorTotal;
-    }        
+    }
 }

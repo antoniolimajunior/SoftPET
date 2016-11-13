@@ -11,31 +11,32 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "produto")
-@NamedQueries({@NamedQuery(name = "Produto.findAll", query = "SELECT p FROM Produto p ORDER BY p.id"),
-                @NamedQuery(name = "Produto.findById", query = "SELECT p FROM Produto p WHERE p.id = :id"),
-                @NamedQuery(name = "Produto.findByDescricao", query = "SELECT p FROM Produto p WHERE p.descricao LIKE :descricao")})
+@NamedQueries({
+    @NamedQuery(name = "Produto.findAll", query = "SELECT p FROM Produto p ORDER BY p.id"),
+    @NamedQuery(name = "Produto.findById", query = "SELECT p FROM Produto p WHERE p.id = :id"),
+    @NamedQuery(name = "Produto.findByDescricao", query = "SELECT p FROM Produto p WHERE p.descricao LIKE :descricao")})
 public class Produto {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    
+
     @OneToOne
     private Categoria categoria;
-    
+
     @OneToOne
     private Marca marca;
-    
+
     private String descricao;
-    
+
     private String codigoBarras;
-    
+
     private String unidade;
-    
+
     private String referencia;
-    
+
     private Double estoqueAtual;
-    
+
     private String observacao;
 
     public Integer getId() {

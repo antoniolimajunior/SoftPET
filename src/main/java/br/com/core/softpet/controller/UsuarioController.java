@@ -27,7 +27,7 @@ public class UsuarioController<Usuario> implements IController<Usuario> {
     public List<Usuario> procurarPorNome(String query, String nome) {
         return usuarioDao.findByName(query, nome);
     }
-    
+
     public List<Usuario> procurarPorParam(String query, String param, String descricao) {
         return usuarioDao.findByParam(query, param, descricao);
     }
@@ -35,10 +35,13 @@ public class UsuarioController<Usuario> implements IController<Usuario> {
     public Usuario procurarPorId(String query, String nomeParametro, int id) {
         return (Usuario) usuarioDao.findById(query, nomeParametro, id);
     }
-    
-    @Override
-    public List<Usuario> procurarPorId(String query, int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    public Usuario procurarPorLogin(String usuariofindByNomeSenha, String usuario, String senha) {
+        return (Usuario) usuarioDao.findByLogin(usuariofindByNomeSenha, usuario, senha);
     }
 
+    @Override
+    public List<Usuario> procurarPorId(String query, int id) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

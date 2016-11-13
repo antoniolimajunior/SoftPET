@@ -31,6 +31,8 @@ public class FormUsuario extends javax.swing.JInternalFrame implements IFormular
             case 2:
                 this.usuario = usuario;
                 this.txtNome.setText(usuario.getNome());
+                this.txtUsuario.setText(usuario.getUsuario());
+                this.txtSenha.setText(usuario.getSenha());
                 this.txtFCPF.setText(usuario.getCpf());
                 this.txtEndereco.setText(usuario.getEndereco());
                 this.txtBairro.setText(usuario.getBairro());
@@ -46,6 +48,8 @@ public class FormUsuario extends javax.swing.JInternalFrame implements IFormular
             case 3:
                 this.usuario = usuario;
                 this.txtNome.setText(usuario.getNome());
+                this.txtUsuario.setText(usuario.getUsuario());
+                this.txtSenha.setText(usuario.getSenha());
                 this.txtFCPF.setText(usuario.getCpf());
                 this.txtEndereco.setText(usuario.getEndereco());
                 this.txtBairro.setText(usuario.getBairro());
@@ -60,6 +64,8 @@ public class FormUsuario extends javax.swing.JInternalFrame implements IFormular
 
                 this.pnlDados.setEnabled(false);
                 this.txtNome.setEnabled(false);
+                this.txtUsuario.setEnabled(false);
+                this.txtSenha.setEnabled(false);
                 this.txtFCPF.setEnabled(false);
                 this.txtEndereco.setEnabled(false);
                 this.txtBairro.setEnabled(false);
@@ -103,6 +109,10 @@ public class FormUsuario extends javax.swing.JInternalFrame implements IFormular
         jLabel10 = new javax.swing.JLabel();
         cbEVeterinario = new javax.swing.JCheckBox();
         cbEAdmin1 = new javax.swing.JCheckBox();
+        txtSenha = new javax.swing.JPasswordField();
+        txtUsuario = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
 
@@ -158,45 +168,58 @@ public class FormUsuario extends javax.swing.JInternalFrame implements IFormular
 
         cbEAdmin1.setText("É Administrador");
 
+        jLabel11.setText("Usuário");
+
+        jLabel12.setText("Senha:");
+
         javax.swing.GroupLayout pnlDadosLayout = new javax.swing.GroupLayout(pnlDados);
         pnlDados.setLayout(pnlDadosLayout);
         pnlDadosLayout.setHorizontalGroup(
             pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDadosLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
-                    .addComponent(txtEndereco)
-                    .addComponent(txtBairro)
-                    .addComponent(txtCidade)
-                    .addComponent(txtComplemento)
-                    .addComponent(txtEmail)
-                    .addComponent(jScrollPane1)
                     .addGroup(pnlDadosLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlDadosLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtFTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addGroup(pnlDadosLayout.createSequentialGroup()
+                                .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtEndereco)
+                                    .addComponent(txtBairro)
+                                    .addComponent(txtCidade)
+                                    .addComponent(txtComplemento)
+                                    .addComponent(txtEmail)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
+                                    .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtFCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtFCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtFTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtSenha)
+                                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)))))
+                            .addGroup(pnlDadosLayout.createSequentialGroup()
+                                .addComponent(cbEAdmin1)
+                                .addGap(26, 26, 26)
+                                .addComponent(cbEVeterinario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
-            .addGroup(pnlDadosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cbEAdmin1)
-                .addGap(26, 26, 26)
-                .addComponent(cbEVeterinario)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlDadosLayout.setVerticalGroup(
             pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,6 +229,14 @@ public class FormUsuario extends javax.swing.JInternalFrame implements IFormular
                     .addComponent(jLabel1)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtFCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -245,7 +276,7 @@ public class FormUsuario extends javax.swing.JInternalFrame implements IFormular
                 .addGroup(pnlDadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbEVeterinario)
                     .addComponent(cbEAdmin1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         btnCancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\AntonioJR\\Desktop\\WORKSPACE_SISTEMASDISTRIBUIDOS\\SoftPET\\src\\main\\resources\\icons\\cross.png")); // NOI18N
@@ -273,7 +304,7 @@ public class FormUsuario extends javax.swing.JInternalFrame implements IFormular
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlDados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 304, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -323,6 +354,8 @@ public class FormUsuario extends javax.swing.JInternalFrame implements IFormular
     private javax.swing.JCheckBox cbEVeterinario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -343,6 +376,8 @@ public class FormUsuario extends javax.swing.JInternalFrame implements IFormular
     private javax.swing.JFormattedTextField txtFTelefone;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextArea txtObservacao;
+    private javax.swing.JPasswordField txtSenha;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 
     public boolean validarEntidade() {
@@ -351,6 +386,8 @@ public class FormUsuario extends javax.swing.JInternalFrame implements IFormular
             return false;
         } else {
             usuario.setNome(this.txtNome.getText());
+            usuario.setUsuario(this.txtUsuario.getText());
+            usuario.setSenha(new String(this.txtSenha.getPassword()));
             usuario.setCpf(this.txtFCPF.getText());
             usuario.setEndereco(this.txtEndereco.getText());
             usuario.setBairro(this.txtBairro.getText());

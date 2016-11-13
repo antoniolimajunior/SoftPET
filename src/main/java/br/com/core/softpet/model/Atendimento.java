@@ -31,7 +31,7 @@ public class Atendimento {
 
     @OneToOne
     private Animal animal;
-    
+
     @OneToOne
     private Usuario usuario;
 
@@ -39,27 +39,27 @@ public class Atendimento {
     private List<AtendimentoItem> atendimentoItem = new ArrayList<>();
 
     private String numero;
-    
+
     private Date dataAtendimento;
-    
+
     private String procedimento;
-    
+
     private String prescricao;
-    
+
     private String exameClinico;
-    
+
     private Double temperaturaAnimal;
-    
+
     private Integer frequenciaCardiaca;
-    
+
     private Integer frequenciaRespiratoria;
-    
+
     private String examesSolicitados;
-    
+
     private Boolean situacao;
-    
+
     private Double valorDesconto;
-    
+
     private Double valorTotal;
 
     public Integer getId() {
@@ -81,7 +81,7 @@ public class Atendimento {
     public void setDataAtendimento(Date dataAtendimento) {
         this.dataAtendimento = dataAtendimento;
     }
-    
+
     public void setNumero(String numero) {
         this.numero = numero;
     }
@@ -196,5 +196,5 @@ public class Atendimento {
 
     public void setValorTotal(Double valorTotal) {
         this.valorTotal = valorTotal;
-    }    
+    }
 }
