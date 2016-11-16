@@ -169,7 +169,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="SoftPET - Sistema de Pet Shop"/>
+    <Property name="title" type="java.lang.String" value="SoftPET - Sistema para Petshop"/>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>

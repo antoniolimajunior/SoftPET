@@ -85,7 +85,7 @@ public class Main extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("SoftPET - Sistema de Pet Shop");
+        setTitle("SoftPET - Sistema para Petshop");
         setResizable(false);
 
         jToolBar1.setRollover(true);
